@@ -1,0 +1,6 @@
+git init
+python -m virtualenv .
+.\scripts\activate
+touch eid.txt
+
+
