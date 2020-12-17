@@ -2,5 +2,12 @@ git init
 python -m virtualenv .
 .\scripts\activate
 touch eid.txt
+pip install django
+mkdir src && cd src
+django-admin startproject my_blog .
+python manage.py startapp blog
+python manage.py startapp user
+
+
 
 
