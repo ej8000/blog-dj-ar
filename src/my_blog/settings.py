@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # if you want static folder to all project
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"static"),
-    # 'C:/Users/abbas/Desktop/dev/Blogge/src/static',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,"static"),
+#     # 'C:/Users/abbas/Desktop/dev/Blogge/src/static',
+# ]
