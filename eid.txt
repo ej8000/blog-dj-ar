@@ -7,13 +7,48 @@ mkdir src && cd src
 django-admin startproject my_blog .
 python manage.py startapp blog
 python manage.py startapp user
+add the 2 apps to the settings.py
+add urls.py for the 2 apps
 cd ..
 git remote add origin https://github.com/ej8000/blog-dj-ar.git
 git push -u origin main
 cd src
 python manage.py migrate
 python manage.py runserver
+make folder 'static' in src
+in static make folders 'css' ,'fonts','images','js'
+make folder templates in blog
+make folder blog in templates
+create file index.html in blog/templates/blog/index.html
+------------------------------------------------------
+in blog\views make home function 
+    def home(request):
+    return render(request,'blog/index.html',{})
+----------------------------------------------    
+in blog\urls.py
+        from django.urls import path
+        from . import views
+        urlpatterns =[
+            path('',views.home, name ='home'),
+        ]
+----------------------------------
+in my_blog urls.py
+    from django.contrib import admin
+    from django.urls import path,include
 
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('',include('blog.urls')),
+    ]
+---------------------------------------------------    
+in settings.py
+    STATIC_URL = '/static/'
+# if you want static folder to all project
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,"static"),
+    'C:/Users/abbas/Desktop/dev/Blogge/src/static',
+]
+-----------------------------------------------
 
 
 
